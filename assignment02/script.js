@@ -43,7 +43,7 @@ function checkInputs() {
         setErrorFor(password2, 'Re-Password should match with Password');
     } else{
         setSuccessFor(password2);
-        window.location.replace("sign in.html");
+        window.location.replace("signin.html");
     }
 }
 
