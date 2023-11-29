@@ -1,0 +1,87 @@
+*, html, body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(178, 190, 181);
+    margin: 0;
+    color: darkolivegreen;
+}
+#wraper{
+    position: relative;
+    max-width: 90%;
+    margin: 0 auto;
+}
+a{
+    text-decoration: none;
+    position: relative;
+    color: darkolivegreen;
+}
+a::after{
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 25%;
+    height: 2px;
+    background-color: darkolivegreen;
+    transition: width .5s ease;
+}
+a:hover:after{width: 100%;}
+
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav{width: 40rem;max-width: 100%;}
+nav ul{
+    display: inline-flex;
+    list-style: none;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.hero{
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.heroBanner{
+    width: 100%;
+    max-height: 100vh;
+}
+.overlay{
+    background-color: #00000093;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.hero h1{
+    position: absolute;
+    top: 10rem;
+    left: 5rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    z-index: 3;
+}
+.hero h1 span{
+    display: block;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+footer{
+    background: rgba(225,225,225,0.3);
+  backdrop-filter: saturate(180%) blur(10px);
+}

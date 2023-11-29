@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 01 - Signin</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div id="wraper">
+        <header>
+            <div id="brand"><a href="./index.html">Logo goes here</a></div>
+            <nav>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li>About us</li>
+                    <li>Contact</li>
+                    <li><a href="./signin.html">Login</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h1>Sign In</h1>
+            <form id="formsi" class="form">
+                <div class="form-control">
+                    <label for="username">Username</label>
+                    <input type="text" placeholder="Username" id="username" />
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-control">
+                    <label for="username">Password</label>
+                    <input type="password" placeholder="password" id="password" />
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+                <button class="sip" onclick="checkInputs()">Sign In</button>
+                <div><a href="signup.html" class="sup">Don't have an Account</a></div>
+
+            </form>
+        </main>
+    </div>
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li>About us</li>
+                <li>Contact</li>
+                <li><a href="./signin.html">Login</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
