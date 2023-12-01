@@ -47,15 +47,15 @@ nav ul{
     justify-content: space-around;
 }
 
-.hero{
+.hero, main{
     position: relative;
-    min-height: 100vh;
+    min-height: 83vh;
     display: flex;
     flex-direction: column;
 }
 .heroBanner{
     width: 100%;
-    max-height: 100vh;
+    max-height: 83vh;
 }
 .overlay{
     background-color: #00000093;
@@ -84,4 +84,114 @@ nav ul{
 footer{
     background: rgba(225,225,225,0.3);
   backdrop-filter: saturate(180%) blur(10px);
+}
+
+/* Form related only */
+.form_bg{
+    background: url(../img/Form-bg.png) center center no-repeat;
+}
+.form {
+    padding: 30px 40px;
+    backdrop-filter: blur(15px);
+    border-radius: 12px;
+    /* border: 2px solid #556b2f; */
+}
+
+.form-control {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.form-control label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.form-control input {
+    border: 2px solid #bbbbbb;
+    border-radius: 4px;
+    display: block;
+    font-family: inherit;
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+}
+
+.form-control input:focus {
+    outline: 0;
+    border-color: #777;
+}
+
+.form-control.success input {
+    border-color: #2ecc71;
+}
+
+.form-control.error input {
+    border-color: #e74c3c;
+}
+
+.form-control i {
+    visibility: hidden;
+    position: absolute;
+    top: 40px;
+    right: 10px;
+}
+
+.form-control.success i.fa-check-circle {
+    color: #2ecc71;
+    visibility: visible;
+}
+
+.form-control.error i.fa-exclamation-circle {
+    color: #e74c3c;
+    visibility: visible;
+}
+
+.form-control small {
+    color: #e74c3c;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+.form-control.error small {
+    visibility: visible;
+}
+
+main > h1{
+    text-align: center;
+    font-size: 2rem;
+}
+main > form#formsi{
+    width: 75%;
+    margin: auto;
+}
+
+main > form#formsi input{
+    border-radius: 8px;
+}
+
+main > form#formsi .btn{
+    display: flex;
+    align-self: center;
+    margin: 0 auto;
+    border: 1px solid darkolivegreen;
+    border-radius: 6px;
+    color: darkolivegreen;
+    padding: .5rem 1rem;
+    cursor: pointer;
+    line-height: 1;
+}
+main > form#formsi .btn:hover{
+    background: darkolivegreen;
+    color: #fff;
+    border-color: #fff;
+}
+.lnk{
+    display:block;
+    align-self: center;
+    width:fit-content;
+    margin: 0.5rem auto 0;
 }
