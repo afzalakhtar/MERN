@@ -8,8 +8,56 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <header>
-        <div id="brand"></div>
+    <div id="wraper">
+        <header>
+            <div id="brand"><a href="./index.html">Logo goes here</a></div>
+            <nav>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li>About us</li>
+                    <li>Contact</li>
+                    <li><a href="./signin.html">Login</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="form_bg">
+            <h1>Create Account</h1>
+            <form id="formsi" class="form">
+                <div class="form-control">
+                    <label for="username">Username</label>
+                    <input type="text" placeholder="must be unique" id="username" />
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+                <div class="form-control">
+                    <label for="username">Email</label>
+                    <input type="email" placeholder="your email here" id="email" />
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+                <div class="form-control">
+                    <label for="username">Password</label>
+                    <input type="password" placeholder="set your password" id="password"/>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+                <div class="form-control">
+                    <label for="username">Password check</label>
+                    <input type="password" placeholder="re-enter your password" id="password2"/>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+                <button class="btn" onclick="checkInputs()" >Submit</button>
+            </form>
+        </main>
+    </div>
+
+    <footer>
         <nav>
             <ul>
                 <li><a href="./index.html">Home</a></li>
@@ -18,50 +66,6 @@
                 <li><a href="./signin.html">Login</a></li>
             </ul>
         </nav>
-    </header>
-
-    <main class="form_bg">
-        <h1>Create Account</h1>
-        <form id="form" class="form">
-            <div class="form-control">
-                <label for="username">Username</label>
-                <input type="text" placeholder="must be unique" id="username" />
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error message</small>
-            </div>
-            <div class="form-control">
-                <label for="username">Email</label>
-                <input type="email" placeholder="your email here" id="email" />
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error message</small>
-            </div>
-            <div class="form-control">
-                <label for="username">Password</label>
-                <input type="password" placeholder="set your password" id="password"/>
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error message</small>
-            </div>
-            <div class="form-control">
-                <label for="username">Password check</label>
-                <input type="password" placeholder="re-enter your password" id="password2"/>
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error message</small>
-            </div>
-            <button class="sip">Submit</button>
-        </form>
-    </main>
-
-    <footer>
-        <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li>About us</li>
-            <li>Contact</li>
-            <li><a href="./signin.html">Login</a></li>
-        </ul>
     </footer>
 
     <script src="./js/script.js"></script>

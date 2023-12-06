@@ -72,7 +72,7 @@ nav ul{
     left: 5rem;
     font-size: 2rem;
     font-weight: 700;
-    color: #fff;
+    color: honeydew;
     z-index: 3;
 }
 .hero h1 span{
@@ -163,6 +163,7 @@ footer{
 main > h1{
     text-align: center;
     font-size: 2rem;
+    color: honeydew;
 }
 main > form#formsi{
     width: 75%;
@@ -186,12 +187,15 @@ main > form#formsi .btn{
 }
 main > form#formsi .btn:hover{
     background: darkolivegreen;
-    color: #fff;
-    border-color: #fff;
+    color: honeydew;
+    border-color: honeydew;
 }
 .lnk{
     display:block;
     align-self: center;
     width:fit-content;
     margin: 0.5rem auto 0;
+    color: honeydew;
+    transition: all .5s ease;
 }
+.lnk:hover{color: darkolivegreen;}
