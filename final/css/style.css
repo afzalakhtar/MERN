@@ -106,6 +106,7 @@ footer{
 .form-control label {
     display: inline-block;
     margin-bottom: 5px;
+    color: #0db10d;
 }
 
 .form-control input {
@@ -165,16 +166,16 @@ main > h1{
     font-size: 2rem;
     color: honeydew;
 }
-main > form#formsi{
+main > form{
     width: 75%;
     margin: auto;
 }
 
-main > form#formsi input{
+main > form input{
     border-radius: 8px;
 }
 
-main > form#formsi .btn{
+main > form .btn{
     display: flex;
     align-self: center;
     margin: 0 auto;
@@ -185,7 +186,7 @@ main > form#formsi .btn{
     cursor: pointer;
     line-height: 1;
 }
-main > form#formsi .btn:hover{
+main > form .btn:hover{
     background: darkolivegreen;
     color: honeydew;
     border-color: honeydew;
