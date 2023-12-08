@@ -1,50 +1,48 @@
-console.log('js loaded!')
-var form = document.getElementById('formReg');
-form.addEventListener('submit', e => {
-    confirm.log(123546)
-    // var form = document.getElementById('regi_form');
-    var userName = document.getElementById('username');
-    var email = document.getElementById('email');
-    var pass = document.getElementById('password');
-    var pass2 = document.getElementById('password2');
+let userName, email, pass = document.getElementById('password'), pass2,
+    form = document.querySelector('#formReg');
+form.addEventListener("submit", (event) => {
+    userName = document.getElementById('username');
+    email = document.getElementById('email');
+    pass2 = document.getElementById('password2');
 
-    e.preventDefault();
+    event.preventDefault();
+
     checkInputs();
 });
 
-function checkInputs() {
-    console.log(12)
-    const userVal = userName.value.trim();
-    const emailVal = email.value.trim();
-    const passVal = pass.value.trim();
-    const pass2Val = pass2.value.trim();
+const checkInputs = () => {
+    const userVal = userName.value.trim(), emailVal = email.value.trim(), passVal = pass.value.trim(),
+        pass2Val = pass2.value.trim(), regex = /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/, mailformat = regex.test(emailVal);
 
-    if(userVal == ''){
+    if (userVal == '') {
         setErrorFor(userName, 'User name should not be blank')
-    }else{
+    } else {
         setSuccessFor(userName)
     }
 
-    if(emailVal == ''){
-        setErrorFor(emailVal, 'Email should not be blank')
-    }else if (!isEmail(emailValue)) {
-        setErrorFor(emailVal, 'Email should be valid');
-    } else{
-        setSuccessFor(emailVal)
+    if (emailVal == '' || !mailformat) {
+        setErrorFor(email, 'Please enter a valid email address')
+    } else {
+        setSuccessFor(email)
     }
 
-    if(passVal == ''){
-        setErrorFor(passVal, 'Password should not be blank')
-    }else{
-        setSuccessFor(passVal)
+    if (passVal == '') {
+        setErrorFor(pass, 'Password should not be blank')
+    } else if (passVal.length < 6) {
+        setErrorFor(pass, 'Minimum number of characters is 6');
+    } else if (passVal.length > 12) {
+        setErrorFor(pass, 'Maximum number of characters is 12');
+    }
+    else {
+        setSuccessFor(pass)
     }
 
-    if(pass2Val == ''){
-        setErrorFor(pass2Val, 'Re-Password should not be blank')
-    } else if(passVal !== pass2Val) {
-        setErrorFor(password2, 'Re-Password should match with Password');
-    } else{
-        setSuccessFor(pass2Val)
+    if (pass2Val == '') {
+        setErrorFor(pass2, 'Re-Password should not be blank')
+    } else if (passVal !== pass2Val) {
+        setErrorFor(pass2, 'Re-Password should match with Password');
+    } else {
+        setSuccessFor(pass2)
         window.location.replace("signin.html");
     }
 
@@ -52,18 +50,61 @@ function checkInputs() {
 }
 
 const setErrorFor = (input, message) => {
-    console.log(13)
     const formControl = input.parentElement;
     const small = formControl.querySelector('small');
     formControl.className = 'form-control error';
     small.innerText = message;
 }
-const setSuccessFor = (input) =>{
-    console.log(14)
+const setSuccessFor = (input) => {
     const formControl = input.parentElement;
     formControl.className = 'form-control success'
 }
 
-function isEmail(email) {
-    return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+// Check password strength
+const strengthbar = document.getElementById("meter");
+pass.addEventListener("keyup", function (e) {
+    checkpassword(pass.value);
+    e.preventDefault();
+});
+const checkpassword = (password) => {
+    var strength = 0;
+    if (password.match(/[a-z]+/)) {
+        strength += 1;
+    }
+    if (password.match(/[A-Z]+/)) {
+        strength += 1;
+    }
+    if (password.match(/[0-9]+/)) {
+        strength += 1;
+    }
+    if (password.match(/[$@#&!.]+/)) {
+        strength += 1;
+
+    }
+
+    switch (strength) {
+        case 0:
+            strengthbar.value = 0;
+            break;
+
+        case 1:
+            strengthbar.value = 25;
+            setErrorFor(pass, 'Bad');
+            break;
+
+        case 2:
+            strengthbar.value = 50;
+            setErrorFor(pass, 'Poor');
+            break;
+
+        case 3:
+            strengthbar.value = 75;
+            setErrorFor(pass, 'Okay, but not Strong!');
+            break;
+
+        case 4:
+            strengthbar.value = 100;
+            setErrorFor(pass, 'Excellent, Strong!');
+            break;
+    }
 }
