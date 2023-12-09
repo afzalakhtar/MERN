@@ -200,3 +200,19 @@ main > form .btn:hover{
     transition: all .5s ease;
 }
 .lnk:hover{color: darkolivegreen;}
+
+progress::-moz-progress-bar { background: honeydew; }
+progress::-webkit-progress-value { background: honeydew; }
+progress { color: honeydew;background-color: honeydew; }
+
+progress.poor::-moz-progress-bar { background: #f00; }
+progress.poor::-webkit-progress-value { background: #f00; }
+progress.poor { color: #f00;background-color: #f00; }
+
+progress.okay::-moz-progress-bar { background: yellow; }
+progress.okay::-webkit-progress-value { background: yellow; }
+progress.okay { color: yellow;background-color: yellow; }
+
+progress.good::-moz-progress-bar { background: darkolivegreen; }
+progress.good::-webkit-progress-value { background: darkolivegreen; }
+progress.good { color: darkolivegreen;background-color: darkolivegreen; }

@@ -74,6 +74,7 @@ const checkpassword = (password) => {
         strength += 1;
 
     }
+    let progressBar = document.querySelector('progress')
 
     switch (strength) {
         case 0:
@@ -83,21 +84,28 @@ const checkpassword = (password) => {
         case 1:
             strengthbar.value = 25;
             setErrorFor(pass, 'Bad');
+            progressBar.classList.add("poor");
             break;
 
         case 2:
             strengthbar.value = 50;
             setErrorFor(pass, 'Poor');
+            progressBar.className = '';
+            progressBar.classList.add("poor");
             break;
 
         case 3:
             strengthbar.value = 75;
             setErrorFor(pass, 'Okay, but not Strong!');
+            progressBar.className = '';
+            progressBar.classList.add("okay");
             break;
 
         case 4:
             strengthbar.value = 100;
             setErrorFor(pass, 'Excellent, Strong!');
+            progressBar.className = '';         
+            progressBar.classList.add("good");
             break;
     }
 }
