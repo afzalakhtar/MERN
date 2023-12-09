@@ -1,6 +1,9 @@
 let userName, email, pass = document.getElementById('password'), pass2,
     form = document.querySelector('#formReg');
-form.addEventListener("submit", (event) => {
+
+    
+// Signup Form Validation
+    form.addEventListener("submit", (event) => {
     userName = document.getElementById('username');
     email = document.getElementById('email');
     pass2 = document.getElementById('password2');
@@ -9,6 +12,7 @@ form.addEventListener("submit", (event) => {
 
     checkInputs();
 });
+
 
 const checkInputs = () => {
     const userVal = userName.value.trim(), emailVal = email.value.trim(), passVal = pass.value.trim(),
@@ -47,17 +51,6 @@ const checkInputs = () => {
     }
 
 
-}
-
-const setErrorFor = (input, message) => {
-    const formControl = input.parentElement;
-    const small = formControl.querySelector('small');
-    formControl.className = 'form-control error';
-    small.innerText = message;
-}
-const setSuccessFor = (input) => {
-    const formControl = input.parentElement;
-    formControl.className = 'form-control success'
 }
 
 // Check password strength
