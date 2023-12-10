@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Game</title>
+</head>
+<body>
+    <h1>Number guess game</h1>
+    <p>Guess the Number between 0 to 10</p>
+    <form id="guessNumForm">
+        <label for="num">Guess the number</label>
+        <input type="text" name="num" id="num">
+        <button type="submit" id="submitNum">Submit</button>
+    </form>
+    <div class="result"></div>
+
+
+    <script>
+        const frm = document.querySelector('#guessNumForm'), getNum = document.querySelector('#num'),
+        submitBtn = document.querySelector('#submitNum');
+        frm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const theNum = 5, numVal = getNum.value.trim(), result = document.querySelector('.result');
+
+            if(theNum == numVal){
+                result.innerHTML = "Congratulations"
+            }else if(numVal < theNum && numVal >= 0){
+                result.innerHTML = "Opps! Try again with greater Number"
+            }else if(numVal > theNum && numVal <= 10){
+                result.innerHTML = "Opps! Try again with smaller Number"
+            }
+            else{
+                result.innerHTML = "Opps! The Number you have guessed is out of range"
+            }
+        })
+
+    </script>
+</body>
+</html>
