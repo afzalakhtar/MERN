@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Ludo game</title>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="player active" id="player1">
+            <figure>
+                <img src="./images/player1.jpg" alt="Ludo Player 1" style="width:100%">
+                <figcaption>
+                    <h2>Player 1</h2>
+                    <p><strong>Score: <span class="score"></span></strong></p>
+                </figcaption>
+            </figure>
+        </div>
+        <div id='dice'>
+            <div id="dice-one-side-one" class='side one'>
+              <div class="dot one-1"></div>
+            </div>
+            <div id="dice-one-side-two" class='side two'>
+              <div class="dot two-1"></div>
+              <div class="dot two-2"></div>
+            </div>
+            <div id="dice-one-side-three" class='side three'>
+              <div class="dot three-1"></div>
+              <div class="dot three-2"></div>
+              <div class="dot three-3"></div>
+            </div>
+            <div id="dice-one-side-four" class='side four'>
+              <div class="dot four-1"></div>
+              <div class="dot four-2"></div>
+              <div class="dot four-3"></div>
+              <div class="dot four-4"></div>
+            </div>
+            <div id="dice-one-side-five" class='side five'>
+              <div class="dot five-1"></div>
+              <div class="dot five-2"></div>
+              <div class="dot five-3"></div>
+              <div class="dot five-4"></div>
+              <div class="dot five-5"></div>
+            </div>
+            <div id="dice-one-side-six" class='side six'>
+              <div class="dot six-1"></div>
+              <div class="dot six-2"></div>
+              <div class="dot six-3"></div>
+              <div class="dot six-4"></div>
+              <div class="dot six-5"></div>
+              <div class="dot six-6"></div>
+            </div>
+          </div>
+        <div class="player" id="player2">
+            <figure>
+                <img src="./images/player2.png" alt="Ludo Player 2" style="width:100%">
+                <figcaption>
+                    <h2>Player 2</h2>
+                    <p><strong>Score: <span class="score"></span></strong></p>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+    <div class="wrapper m-t-3rem">
+        <div id='roll' class='roll-button'>
+            <button type="button">Roll dice!</button>
+        </div>
+    </div>
+    
+    <script src="./js/script.js"></script>
+</body>
+</html>
