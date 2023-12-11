@@ -19,21 +19,27 @@
     <script>
         const frm = document.querySelector('#guessNumForm'), getNum = document.querySelector('#num'),
         submitBtn = document.querySelector('#submitNum');
+        let guess = 1, theNum = Math.floor(Math.random() * 10) + 1;
         frm.addEventListener('submit', (event) => {
             event.preventDefault();
+            let guessCount = 0;
 
-            const theNum = 5, numVal = getNum.value.trim(), result = document.querySelector('.result');
+            const numVal = getNum.value.trim(), result = document.querySelector('.result');
 
             if(theNum == numVal){
-                result.innerHTML = "Congratulations"
+                result.innerHTML = "Congratulations!!! YOU GUESSED IT RIGHT IN " + guess + " GUESS"
             }else if(numVal < theNum && numVal >= 0){
+                guess++;
                 result.innerHTML = "Opps! Try again with greater Number"
             }else if(numVal > theNum && numVal <= 10){
+                guess++;
                 result.innerHTML = "Opps! Try again with smaller Number"
             }
             else{
+                guess++;
                 result.innerHTML = "Opps! The Number you have guessed is out of range"
             }
+
         })
 
     </script>
