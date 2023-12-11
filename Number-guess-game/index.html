@@ -41,9 +41,16 @@
 
             if(guessCount > maxAttempt){
                 result.innerHTML = "Opps! You have reached maximum attempt: " + maxAttempt;
-                setTimeout(function(){
+                /*setTimeout(function(){
                     location.replace(location.href);
-                }, 5000)
+                }, 5000)*/
+                setTimeout(() => {
+                    getNum.value = '';
+                    theNum = Math.floor(Math.random() * 10) + 1;
+                    guessCount = 1;
+                    result.innerHTML = "Start the game again"
+                }, 3500)
+                
             }
 
         })
