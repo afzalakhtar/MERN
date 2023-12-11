@@ -18,7 +18,7 @@
 
     <script>
         const frm = document.querySelector('#guessNumForm'), getNum = document.querySelector('#num'),
-        submitBtn = document.querySelector('#submitNum');
+        submitBtn = document.querySelector('#submitNum'), maxAttempt = 3;
         let guessCount = 1, theNum = Math.floor(Math.random() * 10) + 1;
         frm.addEventListener('submit', (event) => {
             event.preventDefault();
@@ -37,6 +37,13 @@
             else{
                 guessCount++;
                 result.innerHTML = "Opps! The Number you have guessed is out of range"
+            }
+
+            if(guessCount > maxAttempt){
+                result.innerHTML = "Opps! You have reached maximum attempt: " + maxAttempt;
+                setTimeout(function(){
+                    location.replace(location.href);
+                }, 5000)
             }
 
         })
