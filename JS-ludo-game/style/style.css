@@ -194,3 +194,11 @@ button:active {
 .m-t-3rem {
     margin-top: 3rem;
 }
+#result{
+    position: absolute;
+    inset: 5% auto auto;
+    margin: auto;
+    color: #08491e;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
