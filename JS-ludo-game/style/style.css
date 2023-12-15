@@ -200,4 +200,6 @@ button:active {
     color: #08491e;
     font-size: 1.5rem;
     font-weight: 600;
+    display: none;
 }
+#result.active{display: block;}
