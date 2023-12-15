@@ -171,7 +171,7 @@ img {
 button {
     position: relative;
     padding: 15px 50px;
-    color: honeydew;
+    color: #fe1744;
     background-color: greenyellow;
     border: none;
     font-size: 1.2rem;
@@ -184,10 +184,9 @@ button {
 button:hover,
 button:active {
     outline: none;
-    /* background: #50514F; */
     cursor: pointer;
-    /* transform: translateY(15px);  */
     box-shadow: inset 1px 3px #50514F;
+    font-size: 1.1rem;
     scale: .98;
 }
 
