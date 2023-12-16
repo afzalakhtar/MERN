@@ -68,7 +68,7 @@ function rollDice(e) {
 
 const gameResult = () => {
     if (player2Score != 0) {
-        if (counter === 5) {
+        if (counter === 10) {
             result.classList.add('active');
 
             if (player1Score > player2Score) {
