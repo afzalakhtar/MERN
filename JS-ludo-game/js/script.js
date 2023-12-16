@@ -1,11 +1,12 @@
 console.log('JavaScript is loaded!');
 
-let elDiceOne = document.getElementById('dice'), elComeOut = document.getElementById('roll');
+let elDiceOne = document.getElementById('dice'), elComeOut = document.getElementById('roll'),
+    activePlayer = document.querySelector('.player.active'), counter = 0;
 const player1 = document.querySelector('#player1'), player2 = document.querySelector('#player2'),
     result = document.querySelector('#result');
-let activePlayer = document.querySelector('.player.active');
 
-var player1Score = 0, player2Score = 0, diceOne, dicetwo;
+
+let player1Score = 0, player2Score = 0, diceOne, dicetwo;
 // console.log(activePlayer)
 
 elComeOut.onclick = function () { rollDice(elComeOut); };
@@ -22,22 +23,16 @@ function rollDice(e) {
     }
 
     if (player1.classList.contains('active')) {
-        
-        player1Score = diceOne;
+
+        player1Score += diceOne;
         console.log(player1Score);
 
         setTimeout(() => {
             player1.querySelector('.score').innerHTML = player1Score;
         }, 1000)
     } else if (player2.classList.contains('active')) {
-        /*dicetwo = Math.floor((Math.random() * 6) + 1);
-        for (let j = 1; j <= 6; j++) {
-            elDiceOne.classList.remove('show-' + j);
-            if (dicetwo === j) {
-                elDiceOne.classList.add('show-' + j);
-            }
-        }*/
-        player2Score = diceOne;
+
+        player2Score += diceOne;
         console.log(player2Score);
 
         setTimeout(() => {
@@ -62,6 +57,8 @@ function rollDice(e) {
     }, 1500)
 
 
+    counter++;
+    console.log(counter)
     e.preventDefault();
 
     setTimeout(rollDice(), 1000);
@@ -70,25 +67,28 @@ function rollDice(e) {
 
 const gameResult = () => {
     if (player2Score != 0) {
-        result.classList.add('active');
+        if (counter === 10) {
+            result.classList.add('active');
 
-        if (player1Score > player2Score) {
-            console.log('Player 1 won!');
-            result.innerText = 'Player 1 won!';
-        } else if (player1Score < player2Score) {
-            console.log('Player 2 won!');
-            result.innerText = 'Player 2 won!';
-        } else {
-            console.log('Draw!');
-            result.innerText = 'Draw!';
+            if (player1Score > player2Score) {
+                console.log('Player 1 won!');
+                result.innerText = 'Player 1 won!';
+            } else if (player1Score < player2Score) {
+                console.log('Player 2 won!');
+                result.innerText = 'Player 2 won!';
+            } else {
+                console.log('Draw!');
+                result.innerText = 'Draw!';
+            }
+            
+            refreshGame();
         }
 
-        refreshGame()
     }
 }
 const refreshGame = () => {
-    setTimeout(()=>{
+    setTimeout(() => {
         location.reload(true);
-    }, 2000)
-      
+    }, 2500)
+
 }
