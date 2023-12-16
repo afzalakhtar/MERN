@@ -53,7 +53,8 @@ function rollDice(e) {
 
     // activePlayer.querySelector('.score').innerHTML = diceOne + diceOne;
     setTimeout(() => {
-        gameResult()
+        // gameResult()
+        refreshGame();
     }, 1500)
 
 
@@ -67,7 +68,7 @@ function rollDice(e) {
 
 const gameResult = () => {
     if (player2Score != 0) {
-        if (counter === 10) {
+        if (counter === 4) {
             result.classList.add('active');
 
             if (player1Score > player2Score) {
@@ -80,15 +81,15 @@ const gameResult = () => {
                 console.log('Draw!');
                 result.innerText = 'Draw!';
             }
-            
-            refreshGame();
+
+            // refreshGame();
+            setTimeout(() => {
+                location.reload(true);
+            }, 2000)
         }
 
     }
 }
-const refreshGame = () => {
-    setTimeout(() => {
-        location.reload(true);
-    }, 2500)
-
+const refreshGame = async () => {
+    await gameResult()
 }
