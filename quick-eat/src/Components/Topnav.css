@@ -1,0 +1,32 @@
+nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.branding{width: 10%;}
+nav ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+    list-style: none;
+}
+nav ul li a{
+    color: darkgreen;
+    position: relative;
+    text-decoration: none;
+}
+nav ul li a::after, nav ul li a.active::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: darkgreen;
+    transition: all 0.3s;
+}
+
+nav ul li a:hover:after, nav ul li a.active::after{width: 100%;}
