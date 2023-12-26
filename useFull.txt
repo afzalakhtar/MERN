@@ -1,3 +1,7 @@
+install extention to VS code:
+icon, JavaScript (ES6) snippets, auto rename tag, js jsx snippets, css snippet complate, Auto Rename Tag
+
+
 git reset --hard origin/main
 
 https://learn-js.org/
