@@ -4,9 +4,16 @@ import Home from './Home';
 import About from './About';
 import Products from './Products';
 import Signup from './Signup';
-import Login from './Login'
+import Login from './Login';
+import Cart from './Cart';
+import { useState, useEffect } from 'react';
 
 const Topnav = () => {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    
+    useEffect(()=>{
+		setIsLoggedIn(false)
+	}, [])
     return (
         <BrowserRouter>
             <nav className="bg-white dark:bg-gray-900 w-full border-b py-5 border-gray-200 dark:border-gray-600">
@@ -20,7 +27,11 @@ const Topnav = () => {
                     <li className=""><NavLink to={'/About'}>About</NavLink></li>
                     <li className=""><NavLink to={'/Products'}>Products</NavLink></li>
                     <li className=""><NavLink to={'/Signup'}>Signup</NavLink></li>
-                    <li className=""><NavLink to={'/Login'}>Login</NavLink></li>
+                    <li className="">{isLoggedIn === false ? <NavLink to={'/Login'}>Login</NavLink> : <NavLink to={'/Cart'}>Cart</NavLink>}</li>
+                    {/* <li className=""><NavLink to={'/Login'}>Login</NavLink></li>
+                    <li className=''><NavLink to={'/Cart'}>Cart</NavLink></li> */}
+                    {/* {isLoggedIn === false ? <li className=""><NavLink to={'/Login'}>Login</NavLink></li> : <li className=''><NavLink to={'/Cart'}>Cart</NavLink></li>} */}
+
                 </ul>
             </nav>
             <Routes>
@@ -29,6 +40,7 @@ const Topnav = () => {
                 <Route path="/Products" element={<Products />}></Route>
                 <Route path="/Signup" element={<Signup />}></Route>
                 <Route path="/Login" element={<Login />}></Route>
+                <Route path="/Cart" element={<Cart />}></Route>
             </Routes>
         </BrowserRouter>
     );
