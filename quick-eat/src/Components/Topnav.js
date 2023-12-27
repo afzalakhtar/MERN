@@ -27,7 +27,9 @@ const Topnav = () => {
                     <li className=""><NavLink to={'/About'}>About</NavLink></li>
                     <li className=""><NavLink to={'/Products'}>Products</NavLink></li>
                     <li className=""><NavLink to={'/Signup'}>Signup</NavLink></li>
-                    <li className="">{isLoggedIn === false ? <NavLink to={'/Login'}>Login</NavLink> : <NavLink to={'/Cart'}>Cart</NavLink>}</li>
+                    <li className="">
+                        {isLoggedIn === false ? <NavLink to={'/Login'}>Login</NavLink> : <NavLink to={'/Cart'}>Cart</NavLink>}
+                    </li>
                     {/* <li className=""><NavLink to={'/Login'}>Login</NavLink></li>
                     <li className=''><NavLink to={'/Cart'}>Cart</NavLink></li> */}
                     {/* {isLoggedIn === false ? <li className=""><NavLink to={'/Login'}>Login</NavLink></li> : <li className=''><NavLink to={'/Cart'}>Cart</NavLink></li>} */}
