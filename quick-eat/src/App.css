@@ -37,3 +37,20 @@
     transform: rotate(360deg);
   }
 }
+
+.ProdItems{
+  display: flex;
+}
+#innerpage-hero{
+  position: relative;
+  display: flex;
+}
+#innerpage-hero img{max-height: 75vh;}
+#innerpage-hero h1{
+  position: absolute;
+  font-size: 3rem;
+  color: #fff;
+  font-weight: 900;
+  align-self: center;
+  margin-left: 5.5rem;
+}

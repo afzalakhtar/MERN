@@ -1,8 +1,10 @@
-
+import InnerpageHero from './InnerpageHero';
+import img from '../images/img02.jpg'
 const About = () => {
     return(
         <>
-        <h1>About Page</h1>
+        <InnerpageHero src={img} alt="Hero" heading="About Page" />
+        
         </>
     )
 }

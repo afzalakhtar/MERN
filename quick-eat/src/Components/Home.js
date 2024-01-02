@@ -1,10 +1,13 @@
 import Hero from "./Hero";
+import ProdItem from "./ProdItem";
+import Footer from "./Footer";
 
 const Home = () => {
     return (
-        <div className="container mx-auto px-5">
+        <div className="container mx-auto">
             <Hero />
-            <h1>Home Page</h1>
+            <ProdItem />            
+            <Footer />
         </div>
     )
 }

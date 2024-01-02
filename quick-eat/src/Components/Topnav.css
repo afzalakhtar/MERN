@@ -41,6 +41,10 @@ nav ul li a.active::after {
     width: 100%;
 }
 
+nav ul li.cart > a.hover::after, nav ul li.cart > a.active::after, nav ul li.cart > a::after{
+    display: none;
+}
+
 
 .close-menu,
 .open-menu {

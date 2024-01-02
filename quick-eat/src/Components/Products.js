@@ -1,8 +1,16 @@
-import React from 'react'
+import ProdItem from "./ProdItem";
+import Footer from "./Footer";
+import InnerpageHero from './InnerpageHero';
+import img1 from '../images/img01.png';
 
 function Products() {
   return (
-    <div>Products</div>
+    <>
+      <InnerpageHero src={img1} alt="Hero" heading="Product Page" />
+      
+      <ProdItem />
+      <Footer />
+    </>
   )
 }
 

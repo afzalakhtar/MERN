@@ -20,13 +20,13 @@ export default function Hero() {
         <>
             <Slider {...settings}>
                 <div>
-                    <img src={img01} alt="food1" />
+                    <img src={img01} alt="food hero 1" />
                 </div>
                 <div>
-                    <img src={img02} alt="food2" />
+                    <img src={img02} alt="food hero 2" />
                 </div>
                 <div>
-                    <img src={img03} alt="food3" />
+                    <img src={img03} alt="food hero 3" />
                 </div>
             </Slider>
         </>
