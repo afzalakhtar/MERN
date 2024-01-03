@@ -68,6 +68,7 @@ nav ul li.cart > a.hover::after, nav ul li.cart > a.active::after, nav ul li.car
     display: none;
 }
 
+
 @media (max-width: 800px) {
     .branding {
         width: auto;

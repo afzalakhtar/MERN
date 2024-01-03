@@ -6,7 +6,7 @@ export default function Footer() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     useEffect(() => {
-        setIsLoggedIn(true);
+        setIsLoggedIn(false);
     }, [])
     return (
 

@@ -54,3 +54,99 @@
   align-self: center;
   margin-left: 5.5rem;
 }
+.login_page{
+  background: url('./images/loginpage-bg.jpg') 0 0 no-repeat;
+  min-height: 85vh;
+  background-size: cover;
+  display: flex;
+}
+
+/* Form style */
+.form {
+  padding: 30px 40px;
+  -webkit-backdrop-filter: blur(15px);
+  -moz-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  border-radius: 12px;
+  /* border: 2px solid #556b2f; */
+}
+
+.form-control {
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.form-control label {
+  display: inline-block;
+  margin-bottom: 5px;
+  color: #86b633;
+}
+
+.form-control input {
+  border: 2px solid #bbbbbb;
+  border-radius: 4px;
+  display: block;
+  font-family: inherit;
+  font-size: 14px;
+  padding: 10px;
+  width: 100%;
+}
+
+.form-control input:focus {
+  outline: 0;
+  border-color: #777;
+}
+
+.form-control.success input {
+  border-color: #2ecc71;
+}
+
+.form-control.error input {
+  border-color: #e74c3c;
+}
+.form-control small {
+  color: #e74c3c;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  /* visibility: hidden; */
+}
+
+/* .form-control.error small {
+  visibility: visible;
+} */
+form{
+  width: 75%;
+  margin: auto;
+}
+
+form input{
+  border-radius: 8px;
+}
+
+form .btn{
+  display: flex;
+  align-self: center;
+  margin: 0 auto;
+  border: 1px solid darkolivegreen;
+  border-radius: 6px;
+  color: darkolivegreen;
+  padding: .5rem 1rem;
+  cursor: pointer;
+  line-height: 1.3;
+}
+form .btn:hover{
+  background: darkolivegreen;
+  color: honeydew;
+  border-color: honeydew;
+}
+.lnk{
+  display:block;
+  align-self: center;
+  width:fit-content;
+  margin: 0.5rem auto 0;
+  color: honeydew;
+  transition: all .5s ease;
+}
+.lnk:hover{color: #86b633;}
