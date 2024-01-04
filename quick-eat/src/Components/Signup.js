@@ -1,115 +1,175 @@
-
+import Footer from "./Footer";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Signup() {
-	// States for registration
-	const [name, setName] = useState("");
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
+	const [values, setValues] = useState({
+		name: '',
+		email: '',
+		password: '',
+		phone: ''
+	})
+	const [validations, setValidations] = useState({
+		name: '',
+		email: '',
+		password: '',
+		phone: ''
+	})
+	const navigate = useNavigate();
 
-	// States for checking the errors
-	const [submitted, setSubmitted] = useState(false);
-	const [error, setError] = useState(false);
+	const validateAll = () => {
+		const { name, email, password, phone } = values
+		const validations = { name: '', email: '', password: '', phone: '' }
+		
+		let isValid = true
 
-	// Handling the name change
-	const handleName = (e) => {
-		setName(e.target.value);
-		setSubmitted(false);
-	};
-
-	// Handling the email change
-	const handleEmail = (e) => {
-		setEmail(e.target.value);
-		setSubmitted(false);
-	};
-
-	// Handling the password change
-	const handlePassword = (e) => {
-		setPassword(e.target.value);
-		setSubmitted(false);
-	};
-
-	// Handling the form submission
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		if (name === "" || email === "" || password === "") {
-			setError(true);
-		} else {
-			setSubmitted(true);
-			setError(false);
+		if (!name) {
+			validations.name = 'Name is required'
+			isValid = false
 		}
-	};
 
-	// Showing success message
-	const successMessage = () => {
-		return (
-			<div
-				className="success"
-				style={{
-					display: submitted ? "" : "none",
-				}}
-			>
-				<h1>User {name} successfully registered!!</h1>
-			</div>
-		);
-	};
+		if (!email) {
+			validations.email = 'Email is required'
+			isValid = false
+		}
 
-	// Showing error message if error is true
-	const errorMessage = () => {
-		return (
-			<div
-				className="error"
-				style={{
-					display: error ? "" : "none",
-				}}
-			>
-				<h1>Please enter all the fields</h1>
-			</div>
-		);
-	};
+		if (email && !/\S+@\S+\.\S+/.test(email)) {
+			validations.email = 'Email format must be as example@mail.com'
+			isValid = false
+		}
+
+		if (!password) {
+			validations.password = 'Password is required'
+			isValid = false
+		}
+		
+
+		if (!phone) {
+			validations.phone = 'Phone is required'
+			isValid = false
+		}
+
+		if (phone && !/^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/.test(phone)) {
+			validations.phone = 'Phone number must be Numeric'
+			isValid = false
+		}
+		
+		if (!isValid) {
+			setValidations(validations)
+		}
+
+		return isValid
+	}
+
+	const validateOne = (e) => {
+		const { name } = e.target
+		const value = values[name]
+		let message = ''
+
+		if (!value) {
+			message = `Enter your ${name}`
+		}
+
+		if (value && name === 'email' && !/\S+@\S+\.\S+/.test(value)) {
+			message = 'Email format must be as example@mail.com'
+		}
+
+		if (value && name === 'phone' && !/^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/.test(phone)) {
+			message = 'Phone number must be Numeric'
+		}
+
+		setValidations({ ...validations, [name]: message })
+	}
+	const handleChange = (e) => {
+		const { name, value } = e.target
+		setValues({ ...values, [name]: value })
+	}
+
+	const handleSubmit = (e) => {
+		e.preventDefault()
+
+		const isValid = validateAll()
+
+		if (!isValid) {
+			return false
+		} else {
+			navigate('/Login')
+		}
+
+		// alert(JSON.stringify(values))
+	}
+
+	const { name, email, password, phone } = values
+
+	const {
+		name: nameVal,
+		email: emailVal,
+		password: passwordVal,
+		phone: phoneVal
+	} = validations
 
 	return (
-		<div className="form">
-			<div>
-				<h1>User Registration</h1>
+		<div className="container mx-auto">
+			<div className='login_page'>
+				<form onSubmit={handleSubmit} className="form">
+					<div className="form-control">
+						<label htmlFor="name">Full Name</label>
+						<input
+							type="text"
+							name="name"
+							id="name"
+							placeholder="Full Name"
+							value={name}
+							onChange={handleChange} onBlur={validateOne}
+							className="p-2 border rounded"
+						/>
+						<small>{nameVal}</small>
+					</div>					
+					<div className="form-control">
+						<label htmlFor="phone">Phone</label>
+						<input
+							type="tel"
+							name="phone"
+							id="phone"
+							placeholder="Phone"
+							value={phone}
+							onChange={handleChange} onBlur={validateOne}
+							classphone="p-2 border rounded"
+						/>
+						<small>{phoneVal}</small>
+					</div>
+					<div className="form-control">
+						<label htmlFor="email">Email</label>
+						<input
+							type="email"
+							name="email"
+							id="email"
+							placeholder="Email"
+							value={email}
+							onChange={handleChange} onBlur={validateOne}
+							className="p-2 border rounded"
+						/>
+						<small>{emailVal}</small>
+					</div>
+					<div className="form-control">
+						<label htmlFor="password">Password</label>
+						<input
+							type="password"
+							name="password"
+							id="password"
+							placeholder="Password"
+							value={password}
+							onChange={handleChange} onBlur={validateOne}
+							className="p-2 border rounded"
+						/>
+						<small>{passwordVal}</small>
+					</div>
+					<button type="submit" className="btn">
+						Sign Up
+					</button>
+				</form>
 			</div>
-
-			{/* Calling to the methods */}
-			<div className="messages">
-				{errorMessage()}
-				{successMessage()}
-			</div>
-
-			<form>
-				{/* Labels and inputs for form data */}
-				<label className="label">Name</label>
-				<input
-					onChange={handleName}
-					className="input"
-					value={name}
-					type="text"
-				/>
-
-				<label className="label">Email</label>
-				<input
-					onChange={handleEmail}
-					className="input"
-					value={email}
-					type="email"
-				/>
-
-				<label className="label">Password</label>
-				<input
-					onChange={handlePassword}
-					className="input"
-					value={password}
-					type="password"
-				/>
-
-				<button onClick={handleSubmit} className="btn" type="submit">
-					Submit
-				</button>
-			</form>
+			<Footer />
 		</div>
 	);
 }
