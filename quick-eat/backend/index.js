@@ -105,7 +105,7 @@ app.use(express.json());
 });*/
 
 mongoose
-  .connect("mongodb://0.0.0.0:27017/quick-eatdb") // Connect to the mongoDB
+  .connect("mongodb+srv://afzalakhtar:admin@cluster0.nnek153.mongodb.net/?retryWrites=true&w=majority") // Connect to the mongoDB
   .then(() => {
     console.log("Connected"); // MongoDB added
   })
