@@ -105,9 +105,9 @@ app.use(express.json());
 });*/
 
 mongoose
-  .connect("mongodb://0.0.0.0:27017/quick-eatdb")
+  .connect("mongodb://0.0.0.0:27017/quick-eatdb") // Connect to the mongoDB
   .then(() => {
-    console.log("Connected");
+    console.log("Connected"); // MongoDB added
   })
   .catch((err) => {
     console.log(err);
