@@ -12,7 +12,7 @@ export default function ProdItem({displayCount}) {
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await axios.get("http://localhost:3001/api/dishes");
+                const response = await axios.get("https://quick-eat-backend.vercel.app//api/dishes");
                 console.log(response.data)
                 setData(response.data);
                 setLoading(false);
